@@ -1,0 +1,20 @@
+In linguistics word embeddings were discussed in the research area of distributional semantics. It aims to quantify and categorize semantic similarities between linguistic items based on their distributional properties in large samples of language data. The underlying idea that "a word is characterized by the company it keeps" was popularized by Firth.
+
+The technique of representing words as vectors has roots in the 1960s with the development of the vector space model for information retrieval. Reducing the number of dimensions using singular value decomposition then led to the introduction of latent semantic analysis in the late 1980s.In 2000 Bengio et al. provided in a series of papers the "Neural probabilistic language models" to reduce the high dimensionality of words representations in contexts by "learning a distributed representation for words". (Bengio et al, 2003). Word embeddings come in two different styles, one in which words are expressed as vectors of co-occurring words, and another in which words are expressed as vectors of linguistic contexts in which the words occur; these different styles are studied in (Lavelli et al, 2004). Roweis and Saul published in Science how to use "locally linear embedding" (LLE) to discover representations of high dimensional data structures. The area developed gradually and really took off after 2010, partly because important advances had been made since then on the quality of vectors and the training speed of the model.
+
+There are many branches and many research groups working on word embeddings. In 2013, a team at Google led by Tomas Mikolov created word2vec, a word embedding toolkit which can train vector space models faster than the previous approaches. Most new word embedding techniques rely on a neural network architecture instead of more traditional n-gram models and unsupervised learning.
+
+Limitations
+One of the main limitations of word embeddings (word vector space models in general) is that possible meanings of a word are conflated into a single representation (a single vector in the semantic space). Sense embeddings are a solution to this problem: individual meanings of words are represented as distinct vectors in the space.
+
+For biological sequences: BioVectors
+Word embeddings for n-grams in biological sequences (e.g. DNA, RNA, and Proteins) for bioinformatics applications have been proposed by Asgari and Mofrad. Named bio-vectors (BioVec) to refer to biological sequences in general with protein-vectors (ProtVec) for proteins (amino-acid sequences) and gene-vectors (GeneVec) for gene sequences, this representation can be widely used in applications of deep learning in proteomics and genomics. The results presented by Asgari and Mofrad suggest that BioVectors can characterize biological sequences in terms of biochemical and biophysical interpretations of the underlying patterns.
+
+Thought vectors
+Thought vectors are an extension of word embeddings to entire sentences or even documents. Some researchers hope that these can improve the quality of machine translation.
+
+Software
+Software for training and using word embeddings includes Tomas Mikolov's Word2vec, Stanford University's GloVe, AllenNLP's Elmo,fastText, Gensim, Indra and Deeplearning4j. Principal Component Analysis (PCA) and T-Distributed Stochastic Neighbour Embedding (t-SNE) are both used to reduce the dimensionality of word vector spaces and visualize word embeddings and clusters.
+
+Examples of application
+For instance, the fastText is also used to calculate word embeddings for text corpora in Sketch Engine that are available online.
