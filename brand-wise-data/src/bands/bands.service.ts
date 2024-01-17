@@ -52,7 +52,7 @@ export class BandsService {
   */
   flatten(festivals:Festival[]): FlattenedData[] {
     let flattenedData: FlattenedData[] = [];
-    festivals.forEach(data=>{
+    festivals && festivals.forEach(data=>{
       let bands = data.bands;
       bands.forEach(band=>{
         flattenedData.push({
