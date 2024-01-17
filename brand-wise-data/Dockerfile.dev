@@ -1,0 +1,16 @@
+# Use an existing docker image as a base
+FROM node:18
+
+WORKDIR /var/app/
+
+COPY ./package*.json ./
+
+# Download and install a dependency
+RUN npm install --force
+
+COPY . .
+
+RUN npm run build
+
+# Tell the image what to do when it starts as a container.
+CMD [ "node", "dist/main.js" ]
