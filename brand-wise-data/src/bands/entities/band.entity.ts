@@ -31,21 +31,38 @@ export class Band {
   recordLabel?: string;
 }
 
-// Need to transform
-export class Record2 {
-   @ApiProperty({ example: "LOL-palooza", description: 'Label of the record' })
-  name?: string;
+export class FlattenedData {
+   /**
+   * The record level of the band
+   * @example Pacific Records
+   */
+  label?: string;
 
-  @ApiProperty({ example: [{
-      "name": "Frank Jupiter",
-      "recordLabel": "Pacific Records"
-    }], description: 'Information of the band' })
-  bands?: Band[];
+   /**
+   * Obejct with band name and festival
+   * @example {name: "Band Name", festival: {name: "festival name"}}
+   */
+  band?: {
+    name?:string;
+    festival?:{
+      name?:string;
+    }
+  }
 }
 
 export class FestivalName {
   @ApiProperty({ example: "Omega Festival", description: 'Festival Name' })
   name?: string;
+}
+
+export class BandFestival {
+  @ApiProperty({ example: "Band X", description: 'Label of the band' })
+  name?: string;
+
+  @ApiProperty({ example: [{
+        "name": "Omega Festival"
+    }], description: 'Information of the band' })
+    festival?: FestivalName;
 }
 
 export class BandFestivals {
@@ -58,16 +75,28 @@ export class BandFestivals {
     festivals?: FestivalName[];
 }
 
-// Need to transform
+export class RecordFestival {
+  @ApiProperty({ example: "Record Label 1", description: 'Label of the record' })
+ label?: string;
+
+ @ApiProperty({ example: [{
+     "name": "Band X",
+     "festival": {
+         "name": "Omega Festival"
+     }
+   }], description: 'Information of the band with band name and the one festival' })
+ bands?: BandFestival[];
+}
+
 export class Record {
    @ApiProperty({ example: "Record Label 1", description: 'Label of the record' })
   label?: string;
 
   @ApiProperty({ example: [{
       "name": "Band X",
-      "festivals": `[{
+      "festivals": [{
           "name": "Omega Festival"
-      }]`
-    }], description: 'Information of the band' })
+      }]
+    }], description: 'Information of the band with band name and the festivals' })
   bands?: BandFestivals[];
 }
