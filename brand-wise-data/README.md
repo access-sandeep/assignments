@@ -26,6 +26,15 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+Following installation guide can be used if the package needs to be setup in local envirnoment.
+Another way is to contenarize the envirnoment using docker and then execute it. I have created a Dockerfile.dev with all instructions in it. However, please execute the following command to start the container.
+
+### Docker
+```bash
+$ docker-compose up
+```
+
+
 ## Installation
 
 ```bash
